@@ -57,6 +57,10 @@ export class CustomerFormComponent implements OnDestroy, OnInit {
     });
   }
 
+  saveNew() {
+    console.log('adicionado botão saveNew');
+  }
+
   get isUpdateOperation() {
     return this.action === actionUpdate;
   }
