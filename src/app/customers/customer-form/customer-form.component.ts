@@ -57,22 +57,6 @@ export class CustomerFormComponent implements OnDestroy, OnInit {
     });
   }
 
-  // cancel() {
-  //   this.router.navigateByUrl('/customers');
-  // }
-
-  // save() {
-  //   const customer = {...this.customer};
-
-  //   customer.status = customer.status ? 'active' : 'inactive';
-
-  //   this.customerSub = this.isUpdateOperation
-  //     ? this.httpClient.put(`${this.url}/${customer.id}`, customer)
-  //       .subscribe(() => this.navigateToList('Cliente atualizado com sucesso'))
-  //     : this.httpClient.post(this.url, customer)
-  //       .subscribe(() => this.navigateToList('Cliente cadastrado com sucesso'));
-  // }
-
   get isUpdateOperation() {
     return this.action === actionUpdate;
   }
