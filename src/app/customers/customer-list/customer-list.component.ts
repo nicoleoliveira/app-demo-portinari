@@ -28,8 +28,8 @@ export class CustomerListComponent implements OnInit, OnDestroy {
   public readonly cityService: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/cities';
 
   public readonly actions: Array<PoPageAction> = [
-    { action: this.onNewCustomer.bind(this), label: 'Cadastrar', icon: 'po-icon-user-add' },
-    { action: this.onRemoveCustomers.bind(this), label: 'Remover clientes' }
+    { action: this.onNewCustomer, label: 'Cadastrar', icon: 'po-icon-user-add' },
+    { action: this.onRemoveCustomers, label: 'Remover clientes' }
   ];
 
   public readonly advancedFilterPrimaryAction: PoModalAction = {
