@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { map } from 'rxjs/operators';
@@ -58,7 +58,15 @@ export class CustomerViewComponent implements OnDestroy, OnInit {
   }
 
   private loadData(id) {
-    this.customerSub = this.httpClient.get(`${this.url}/${id}`)
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+      'X-Portinari-No-Count-Pending-Requests': 'false',
+      'X-Portinari-Screen-Lock': 'true'
+      })
+    };
+
+    this.customerSub = this.httpClient.get(`${this.url}/${id}`, httpOptions)
       .pipe(
         map((customer: any) => {
           const status = { active: 'Ativo', inactive: 'Inativo' };
