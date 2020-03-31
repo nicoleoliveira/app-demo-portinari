@@ -61,8 +61,8 @@ export class CustomerViewComponent implements OnDestroy, OnInit {
 
     const httpOptions = {
       headers: new HttpHeaders({
-      'X-Portinari-No-Count-Pending-Requests': 'false',
-      'X-Portinari-Screen-Lock': 'true'
+      'X-Portinari-Screen-Lock': 'true',
+      'X-Portinari-No-Count-Pending-Requests': 'false'
       })
     };
 
