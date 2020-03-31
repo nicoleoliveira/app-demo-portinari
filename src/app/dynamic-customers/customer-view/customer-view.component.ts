@@ -57,14 +57,6 @@ export class CustomerViewComponent implements OnDestroy, OnInit {
     }
   }
 
-  back() {
-    this.router.navigateByUrl('dynamic-customers');
-  }
-
-  edit() {
-    this.router.navigateByUrl(`dynamic-customers/edit/${this.customer.id}`);
-  }
-
   private loadData(id) {
     this.customerSub = this.httpClient.get(`${this.url}/${id}`)
       .subscribe(response => {
