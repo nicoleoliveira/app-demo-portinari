@@ -65,15 +65,6 @@ export class CustomerViewComponent implements OnDestroy, OnInit {
     this.router.navigateByUrl(`dynamic-customers/edit/${this.customer.id}`);
   }
 
-  remove() {
-    this.customerRemoveSub = this.httpClient.delete(`${this.url}/${this.customer.id}`)
-      .subscribe(() => {
-        this.poNotification.warning('Cadastro do cliente apagado com sucesso.');
-
-        this.back();
-      });
-  }
-
   private loadData(id) {
     this.customerSub = this.httpClient.get(`${this.url}/${id}`)
       .subscribe(response => {
